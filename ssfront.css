@@ -53,3 +53,26 @@
         gap: 20px;
         flex-wrap: wrap;
 }
+
+/*Trying the transition thing because I've never had a chance to feel free to remove it*/
+.darkmode {
+        background-color: #000;
+        color: #fff;
+        transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lightmode {
+        background-color: #fff;
+        color: #000;
+        transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.darkLightmodeButton {
+        display: flex;
+        justify-content: center;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0px;
+        font-size: 1.5rem;
+        gap: 10px;
+}
