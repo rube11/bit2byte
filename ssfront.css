@@ -3,7 +3,7 @@
  .tab-bar {
         display: flex;
         justify-content: space-between;
-        height: 6rem;
+        height: 8rem;
         position: fixed;
         top: 0;
         left: 0;
@@ -52,7 +52,7 @@
         font-size: 2rem;
         display: flex;
         align-items: center;
-        height: 100px;
+        height: 8rem;
         
 }
 
@@ -70,7 +70,7 @@
 }
 
 body {
-        padding-top: 6rem;
+        padding-top: 8rem;
         background: linear-gradient(135deg, hsl(0, 0%, 16%), hsl(0, 0%, 5%), hsl(0, 0%, 0%));
         background-repeat: no-repeat;
         margin: 0;
