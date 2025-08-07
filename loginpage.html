@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="lp.css">
+</head>
+<body>
+    <div class="tab-bar container">
+        <div class="imgcontainer">
+            <a href="frontpage.html">
+                <img src="B2B Logo.png" alt="Club logo" class="imglogo">
+            </a>
+        </div>
+        <div class="tab-links container">
+            <a href="frontpage.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+    <div class="form-container">
+        <div class="card" id="card">
+            <div class="face front">
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <span class="flip-btn" onclick="flipCard()">Sign Up</span></p>
+            </div> 
+            <div class="face back">
+                <h2>Sign Up</h2>
+                <form>
+                    <label for="new-username">New Username</label>
+                    <input type="text" id="new-username" name="new-username" required>
+
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password" required>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <span class="flip-btn" onclick="flipCard()">Login</span></p>
+        </div>
+    </div>
+
+
+</body>
+</html>
