@@ -76,7 +76,7 @@
 
 body {
         padding-top: 4rem;
-        background: linear-gradient(135deg, hsl(0, 0%, 16%), hsl(0, 0%, 5%), hsl(0, 0%, 0%));
+        background: hsl(0, 0%, 10%);
         background-repeat: no-repeat;
         margin: 0;
         height: 100vh;
@@ -157,6 +157,7 @@ body {
         color: white;
         width: 35%;
 }
+
 .whatwedotext {
   display: flex;
   flex-direction: column;
@@ -194,10 +195,6 @@ body {
   .tab-bar div a {
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
-  }
-
-  .imglogo {
-
   }
 
   .statement {

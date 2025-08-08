@@ -1,4 +1,4 @@
-<script>
+
 function flipCard() {
-    document.getElementById("card").classList.toggle("flipped")};
-</script>
+    document.getElementById("card").classList.toggle("flipped");
+}
