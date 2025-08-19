@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import login
 
+
 def home(request):
     return render(request, "frontpage.html")
 
