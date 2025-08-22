@@ -13,8 +13,8 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            messages.success(request, "Account created — you’re logged in!")
-            return redirect("home")
+            messages.success(request, "Account created — you can now log in!")
+            return redirect("login")
     else:
         form = UserCreationForm()
     return render(request, "loginpage.html", {"form": form})
