@@ -132,8 +132,6 @@ body {
 }
 .face{
     position: absolute;
-    /* width: 100%;
-    height: 100%; */
     inset: 0;
     padding: 30px;
     box-sizing: border-box;
@@ -150,6 +148,7 @@ body {
 }
 .card.flipped{
     transform: rotateY(180deg);
+    height: 33rem; /* Adjust this value to make the container taller */
 }
 .flip-btn{
     color: hsl(150, 89%, 15%);
@@ -158,3 +157,4 @@ body {
     display: inline-block;
     margin-top: 10px;
 }
+
