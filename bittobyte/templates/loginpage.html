@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'lp.css' %}">
+</head>
+<body>
+    <div class="tab-bar container">
+        <div class="imgcontainer">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'B2B Logo.png' %}" alt="Club logo" class="imglogo">
+            </a>
+        </div>
+        <div class="tab-links container">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+        </div>
+    </div>
+
+    
+    <div class="form-container">
+        <div class="card" id="card">
+            <div class="face front">
+                <h2>Login</h2>
+                <form method="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="error">
+                            <p>Your Username or password is invalid</p>
+                        </div>
+                    {% endif %}
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <span class="flip-btn" onclick="flipCard()">Sign Up</span></p>
+            </div> 
+            <div class="face back">
+                <h2>Sign Up</h2>
+                <form method="POST" action="{% url 'signup' %}">
+                    {% csrf_token %}
+                    <label for="new-username">New Username</label>
+                    <input type="text" id="new-username" name="username" required>
+
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="password1" required>
+
+                    <label for="new-password-confirm">Confirm Password</label>
+                    <input type="password" id="new-password-confirm" name="password2" required>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <span class="flip-btn" onclick="flipCard()">Login</span></p>
+        </div>
+    </div>
+
+
+</body>
+<script src="{% static 'lpj.js' %}"></script>
+</html>
