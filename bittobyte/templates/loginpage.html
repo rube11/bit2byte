@@ -27,6 +27,11 @@
                 <h2>Login</h2>
                 <form method="POST" action="{% url 'login' %}">
                     {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="error">
+                            <p>Your Username or password is invalid</p>
+                        </div>
+                    {% endif %}
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
 
