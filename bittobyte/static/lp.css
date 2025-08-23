@@ -148,8 +148,9 @@ body {
 }
 .card.flipped{
     transform: rotateY(180deg);
-    height: 33rem; /* Adjust this value to make the container taller */
+    height: 33rem;
 }
+
 .flip-btn{
     color: hsl(150, 89%, 15%);
     cursor: pointer;
