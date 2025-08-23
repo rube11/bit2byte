@@ -6,58 +6,73 @@
   <!--<link rel="stylesheet" href ="ssfront.css">-->
   {% load static %}<link rel="stylesheet" href="{% static 'ssfront.css' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 
 <body>
-<div class="tab-bar">
-  <div class="imgcontainer">
+
+  <header class="header">
     <a href="{% url 'home' %}">
       <img src="{% static 'B2B Logo.png' %}" alt="Club logo" class="imglogo">
     </a>
-  </div>
 
-  <div class="tab-links ">
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'about' %}">About</a>
-    <a href="{% url 'login' %}"><span style="color: hsl(164, 73%, 30%) ">Log in</span></a>
-  </div>
-</div>
+    <nav class="navbar-links">
+      <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+      <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}>About</a>
+      <a href="#">Projects</a>
+      <a href="#">Submit a Form</a>
+      <a href="#">Contact Us</a>
 
-<!-- eventually put this in place of loginpage.html
+      <div class="navbar-links--login">
+        
+        <a href="{% url 'login' %}">
+          <i class="fa-regular fa-user" style="color: hsl(164, 73%, 30%);"></i>
+          Login
+        </a>
+      </div>
+    </nav>
 
-{% if user.is_authenticated %}
-  <a href="{% url 'logout' %}">Logout</a>
-{% else %}
-  <a href="{% url 'login' %}">Login/Signup</a>
-{% endif %}
+  </header>
 
--->
 
-<div class="clubname ">
-  <p>Bit to Byte</p>
-</div>
+  
 
-<div class="mscontainer ">
-  <div class="misstat">
-    <p class = "check"> Our <span style="color: hsl(164, 73%, 30%)">Goal</span></p>
-  </div>
-</div>
+  <!-- eventually put this in place of loginpage.html
 
-<div class="statementcontainer "> 
-  <div class="statement">
-    <P> We want to help students gain professional experience through team-oriented development 
-    in order to create quality software products for others. </P>
-  </div>
-</div>
+  {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Logout</a>
+  {% else %}
+    <a href="{% url 'login' %}">Login/Signup</a>
+  {% endif %}
 
-<div class="whatwedocontainer">
-  <div class="whatwedotext">
-    <p class="top"> What we do</p>
-    <p class="bottom">We are a team of dedicated students here at UNLV focused on developing software at a 
-      low cost. Our services consist of site development and maintenence at a one time cost</p>
-  </div>
-</div>
+  -->
+  <main class="main">
+    <div class="clubname ">
+      <p>Bit to Byte</p>
+    </div>
+
+    <div class="mscontainer ">
+      <div class="misstat">
+        <p class = "check"> Our <span style="color: hsl(164, 73%, 30%)">Goal</span></p>
+      </div>
+    </div>
+
+    <div class="statementcontainer "> 
+      <div class="statement">
+        <P> We want to help students gain professional experience through team-oriented development 
+        in order to create quality software products for others. </P>
+      </div>
+    </div>
+
+    <div class="whatwedocontainer">
+      <div class="whatwedotext">
+        <p class="top"> What we do</p>
+        <p class="bottom">We are a team of dedicated students here at UNLV focused on developing software at a 
+          low cost. Our services consist of site development and maintenence at a one time cost</p>
+      </div>
+    </div>
+  </main>
 
 
 </body>
