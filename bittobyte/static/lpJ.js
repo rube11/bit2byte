@@ -14,3 +14,11 @@ function flipCard() {
 
   setTimeout(() => {card.classList.remove("is-animating");}, 1030);
 }
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.activeForm === "signup") {
+    const card = document.getElementById("card");
+    if (card && !card.classList.contains("flipped")) {
+      card.classList.add("flipped");
+    }
+  }
+});
