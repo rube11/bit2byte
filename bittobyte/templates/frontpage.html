@@ -11,7 +11,7 @@
 
 
 <body>
-
+  <!-- MAIN NAVIGATION BAR -->
   <header class="header">
     <a href="{% url 'home' %}">
       <img src="{% static 'B2B Logo.png' %}" alt="Club logo" class="imglogo">
@@ -40,6 +40,7 @@
 
   </header>
 
+  <!-- SIDE NAVIGATION BAR -->
   <header class="side-bar--header">
     <nav class="side-links">
       <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
