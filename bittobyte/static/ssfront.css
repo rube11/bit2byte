@@ -396,10 +396,6 @@ body {
 }
 
 
-
-
-/* --- Responsive navbar */
-
 @media (max-width: 768px) {
   .clubname {    
         font-size: 4.5rem;
