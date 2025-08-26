@@ -51,8 +51,12 @@
                             {% endfor %}
                         </div>
                     {% endif %}
-                    {{ signup_form.username.label_tag }}
+                    <p id="username">Please enter your First name and last initial (e.g. JohnD.) This is your username
+                    </p>
                     {{ signup_form.username }}
+                    {{ signup_form.email.label_tag }}
+                    {{ signup_form.email }}
+                    <p id="password">Passwords must be at least 8 characters long</p>
                     {{ signup_form.password1.label_tag }}
                     {{ signup_form.password1 }}
                     {{ signup_form.password2.label_tag }}
