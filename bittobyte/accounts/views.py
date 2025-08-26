@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm
-
+from .forms import CustomUserCreationForm
 
 def home(request):
     return render(request, "frontpage.html")
@@ -11,7 +11,7 @@ def home(request):
 
 def login_signup(request):
     login_form = AuthenticationForm()
-    signup_form = UserCreationForm()
+    signup_form = CustomUserCreationForm()
     active_form = "login"
 
     if request.method == "POST":
@@ -22,14 +22,14 @@ def login_signup(request):
                 login(request, user)
                 return redirect('home')
         elif 'signup' in request.POST:
-            signup_form = UserCreationForm(request.POST)
+            signup_form = CustomUserCreationForm(request.POST)
             active_form = "signup"
             if signup_form.is_valid():
                 user = signup_form.save()
                 login(request, user)
                 return redirect('home')
             else:
-                messages.error(request, "Signup failed. Please check the form.")
+                messages.error(request, "Signup failed. Passwords do not match or are under 8 characters.")
 
     return render(request, "loginpage.html", {
         "login_form": login_form,
