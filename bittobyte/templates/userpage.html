@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'userpage.css' %}">
+</head>
+<body>
+    {% include "partials/navbar.html" %} 
+
+    <div class="userpage-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div style="height: 10vh; clear: both;"></div>
+            <div class="bubble">
+                <h2>User Dashboard</h2>
+            </div>
+            
+
+<!-- This code below doesn't work well because we don't have users putting in requests yet or a place to store them-->
+            <ul style="list-style: none; padding: 0;">
+                {% for request in user_requests %}
+                    <li style="margin-bottom: 10px;">
+                        <a href="{% url 'request_detail' request.id %}">
+                            {{ request.title }}
+                        </a>
+                        <span style="font-size: 0.9em; color: #888;">({{ request.status }})</span>
+                    </li>
+                {% empty %}
+                    <li>No current requests.</li>
+                {% endfor %}
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main style="flex: 1; padding: 20px;">
+            <h1>Welcome, {{ user.username }}!</h1>
+            <!-- Additional user info and main content goes here -->
+        </main>
+    </div>
+
+
+
+</body>
+</html>
