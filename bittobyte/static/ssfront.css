@@ -58,8 +58,8 @@ body {
 }
 
 #logout-button {
-        background: transparent;
         border: none;
+        cursor: pointer;
 }
 
 .navbar-links a,
@@ -68,6 +68,7 @@ body {
         display: inline-block; /* Allow for padding */ 
         padding: 0.5rem 1rem;
 
+        background: transparent;
         text-decoration: none;
         font-size: 1.2rem;
         font-family: 'Tomorrow', sans-serif;
@@ -91,7 +92,9 @@ body {
 }
 
 .navbar-links a:hover, 
-.navbar-links a.active {
+.navbar-links a.active,
+.navbar-links button:hover,
+.navbar-links button.active {
         color: hsl(164, 73%, 30%);
         background-color: hsl(0, 7%, 94%);
         
@@ -196,7 +199,8 @@ body {
         align-items: center;
 }
 
-.side-links a {
+.side-links a,
+.side-links button {
         position: relative;
 
         color: white;
@@ -211,7 +215,8 @@ body {
 }
 
 
-.side-links a.active {
+.side-links a.active,
+.side-links button.active {
         position: relative;
         text-decoration: underline;
         text-decoration-color: hsl(164, 73%, 30%);
@@ -219,7 +224,8 @@ body {
 }
 
 /* --- sliding arrow */
-.side-links a::before {
+.side-links a::before,
+.side-links button::before {
         content: "▶";
         font-size: 1rem;
         color: hsl(164, 73%, 30%);
@@ -233,20 +239,23 @@ body {
         transition: left 0.3s ease, opacity 0.5s ease;
 }
 
-.side-links a:hover::before {
+.side-links a:hover::before,
+.side-links button:hover::before {
         left: -1.3rem;
         opacity: 1;
 
 }
 
 /* --- for active */
-.side-links a.active::before{
+.side-links a.active::before,
+.side-links button.active::before {
         left: -1.3rem;
         opacity: 1;
 }
 
 /* --- sliding underline */
-.side-links a::after {
+.side-links a::after,
+.side-links button::after {
         content: "";
         position: absolute;
         left: 0;
@@ -260,7 +269,8 @@ body {
         
 }
 
-.side-links a:hover::after {
+.side-links a:hover::after
+.side-links button:hover::after {
         width: 100%;
 }
 
