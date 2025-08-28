@@ -51,7 +51,7 @@
       {% if user.is_authenticated %}
       <form method="post">
         {% csrf_token %}
-        <button type="submit" formaction="{% url 'logout' %}">
+        <button type="submit" formaction="{% url 'logout' %}" id="logout-button">
           <i class="fa-regular fa-user" style="color: hsl(164, 73%, 30%);"></i>
           Logout
         </button>
