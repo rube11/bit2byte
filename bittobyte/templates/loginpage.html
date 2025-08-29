@@ -16,6 +16,7 @@
             <div class="face front">
                 <h2>Login</h2>
                 <form method="POST">
+                    <!-- gather form data from login using djangos forms-->
                     {% csrf_token %}
                     {% if login_form.non_field_errors %}
                         <div class="errormsg">
@@ -43,6 +44,7 @@
                     {% endif %}
                     <p id="username">Please enter your First name and last initial (e.g. JohnD.) This is your username
                     </p>
+                    <!-- handle loginform data-->
                     {{ signup_form.username }}
                     {{ signup_form.email.label_tag }}
                     {{ signup_form.email }}
