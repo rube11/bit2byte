@@ -21,36 +21,19 @@
     margin-bottom: 4rem;
     color: hsl(164, 73%, 30%);
 }
-/* This is not working how I want, im trying to make it
-   look more like a glossy bubble to hold text but it don't rn*/
-/* .sidebar .bubble{
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 16px 24px;
-    margin-bottom: 24px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsla(0, 0%, 100%, 0.2);
-} */
 .sidebar .bubble {
     background: linear-gradient(145deg,  hsl(0, 0%, 16%), hsl(0, 0%, 5%), hsl(0, 0%, 0%));
-    border-radius: 50px; /* more round like a bubble */
+    border-radius: 50px; 
     padding: 16px 24px;
     margin-bottom: 24px;
     text-align: center;
     box-shadow: 
         inset 2px 2px 6px rgba(255, 255, 255, 0.3), /* inner highlight */
         0 4px 12px rgba(0, 0, 0, 0.3); /* outer shadow */
-    /* border: 1px solid rgba(255, 255, 255, 0.4); */
+
     position: relative;
     overflow: hidden;
 }
-/* .sidebar .bubble h2{
-    font-size: 1.5rem;
-    margin: 0;
-    color: hsl(164, 73%, 30%);
-} */
  .sidebar .bubble::before {
     content: "";
     position: absolute;
@@ -95,10 +78,10 @@
     height: 100%;
     background-image: radial-gradient(
         circle farthest-corner at 10% 20%, 
-        rgba(255,94,247,0.6) 17.8%, /* reduce alpha from 1 to 0.3 */
-        rgba(2,245,255,0.6) 100.2%  /* reduce alpha from 1 to 0.3 */
+        rgba(255,94,247,0.6) 17.8%, 
+        rgba(2,245,255,0.6) 100.2%  
     );
-    filter: blur(10px); /* reduce blur from 15px to 10px */
+    filter: blur(10px); 
     z-index: -1;
     position: absolute;
     left: 0;
@@ -108,8 +91,8 @@
     transform: scale(0.9) rotate(3deg);
     background-image: radial-gradient(
         circle farthest-corner at 10% 20%, 
-        rgba(255,94,247,0.3) 17.8%, /* reduce alpha */
-        rgba(2,245,255,0.3) 100.2%  /* reduce alpha */
+        rgba(255,94,247,0.3) 17.8%, 
+        rgba(2,245,255,0.3) 100.2%  
     );
     transition: 0.5s;
 }
