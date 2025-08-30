@@ -38,3 +38,6 @@ def login_signup(request):
     })
 def about(request):
     return render(request, "about.html")
+
+def userpage(request):
+    return render(request, "userpage.html")
