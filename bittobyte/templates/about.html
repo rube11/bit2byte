@@ -1,0 +1,71 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href ="{% static 'ssteam.css' %}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
+        crossorigin="anonymous">
+    </head>
+    <body>
+
+      <!-- INSERT NAVIGATION BAR HTML FROM partials/navbar.html -->
+      {% include "partials/navbar.html" %} 
+
+      <div class="teamsection center">
+          <P class="ms">Officers</P>
+          
+          <div class="cards">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static 'funnycat.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">President</h5>
+                <p class="card-text">blah blah blah blah </p>
+                <a href="#" class="btn btn-primary">contact</a>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">vice president </h5>
+                <p class="card-text">blah blah blah blah </p>
+                <a href="#" class="btn btn-primary">contact</a>
+              </div>
+            </div>  
+        
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">schedule liason</h5>
+                <p class="card-text">blah blah blah blah </p>
+                <a href="#" class="btn btn-primary">contact</a>
+              </div>
+            </div>  
+
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Treasurer</h5>
+                <p class="card-text">blah blah blah blah </p>
+                <a href="#" class="btn btn-primary">contact</a>
+              </div>
+            </div>  
+
+            <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">advisor</h5>
+                <p class="card-text">blah blah blah blah </p>
+                <a href="#" class="btn btn-primary">contact</a>
+              </div>
+            </div>
+            
+          </div>
+      </div>
+
+    
+    </body>
+</html>
