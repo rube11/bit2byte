@@ -1,0 +1,318 @@
+/* ----- NAVBAR DECORATION ----- */
+.header {
+    background: 
+            /* create circle gradient in bottom right corner */
+            radial-gradient(ellipse at bottom, rgba(21, 132, 103, 0.17), transparent 60%),
+            /* create a linear gradient glow strip at the bottom */
+            linear-gradient(to top, rgba(255, 255, 255, 0.05), transparent 50%),
+            /* base color */
+            black;
+
+    backdrop-filter: blur(12px); /* optional, gives glassy look */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding: 10px 100px;
+    width: 100%;  
+    
+    z-index: 1000;
+}
+
+/* --- logo and nav links */
+.imglogo{
+    filter: brightness(2);
+    width: auto;
+    height: 4rem;
+}
+
+.navbar-links {
+    display: flex;
+    
+}
+
+.navbar-links a {
+
+    display: inline-block; /* Allow for padding */ 
+    padding: 0.5rem 1rem;
+
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Tomorrow', sans-serif;
+    color: white;
+
+    margin-left: 10px;
+    transition: color 0.3s ease;
+
+}
+
+/* --- login link */
+.navbar-links--login {
+    margin-left: 80px;
+}
+
+.navbar-links--login a{        
+    
+    color: hsl(164, 73%, 30%);
+
+}
+
+.navbar-links a:hover, 
+.navbar-links a.active {
+    color: hsl(164, 73%, 30%);
+    background-color: hsl(0, 7%, 94%);
+    
+    border-radius: 25px;
+    opacity: .7;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+/* --- hamburger menu */
+.hamburger-menu {
+    color: white;
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+    display: none;
+
+    z-index: 1100;
+    
+
+}
+
+.hamburger-menu:hover {
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    height: 5px;
+    width: 100%;
+
+    background-color: white;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.hamburger-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.hamburger-menu span:nth-child(3) {
+    top: 75%;
+}
+
+/* transform to x-shape */
+.hamburger-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg); /* rotate diagonally */
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ----- SIDE-NAVBAR DECORATION ----- */
+.side-bar--header {
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    max-width: 450px;
+
+    position: fixed;
+    
+
+    right: 0; /* Start at edge*/
+    transform: translateX(100%); /* Move 100% of own width to the right */
+    
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    overflow:hidden;
+    z-index: 100;
+
+}
+
+.side-bar--header.active {
+    transform: translateX(0); /* back to original position */
+}
+
+.side-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: 'Tomorrow', sans-serif;
+    align-items: center;
+}
+
+.side-links a {
+    position: relative;
+
+    color: white;
+    text-decoration: none;
+
+    display: inline-block;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+
+
+.side-links a.active {
+    position: relative;
+    text-decoration: underline;
+    text-decoration-color: hsl(164, 73%, 30%);
+    text-decoration-thickness: 3px;
+}
+
+/* --- sliding arrow */
+.side-links a::before {
+    content: "▶";
+    font-size: 1rem;
+    color: hsl(164, 73%, 30%);
+    
+    position: absolute;
+    left: -13rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+
+    transition: left 0.3s ease, opacity 0.5s ease;
+}
+
+.side-links a:hover::before {
+    left: -1.3rem;
+    opacity: 1;
+
+}
+
+/* --- for active */
+.side-links a.active::before{
+    left: -1.3rem;
+    opacity: 1;
+}
+
+/* --- sliding underline */
+.side-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+    background-color: hsl(164, 73%, 30%); 
+    
+    transition: width 0.3s ease;
+    
+}
+
+.side-links a:hover::after {
+    width: 100%;
+}
+
+.ms {
+        font-size: 3rem;
+        color: black;
+}
+
+.center {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamsection {
+    gap: 20px;
+    flex-wrap: wrap;
+    background: transparent;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+        
+}
+
+.teamsection > .ms {
+    padding-top: 2rem;
+    color: white;
+}
+
+.teamsection > div > .card {
+    transition:transform .4s ease, background 1s ease;
+    color: white;
+    text-align: center;
+    background: hsla(0, 0%, 0%, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+body {
+    padding-top: 6rem;
+    background: linear-gradient(135deg, hsl(0, 0%, 16%), hsl(0, 0%, 5%), hsl(0, 0%, 0%));
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ------ MEDIA QUERIES RESPONSIVENESS ------ */ 
+/* --- header */
+@media (max-width: 997px) {
+    .hamburger-menu {
+            display: block;
+    }
+
+    .hamburger-menu span {
+            display: block;
+    }
+
+    .navbar-links {
+            display: none
+    }
+
+}
+
+/* --- side header */
+@media (min-width: 998px) {
+    .side-bar--header {
+            display: none;
+            pointer-events: none;
+    }
+}
