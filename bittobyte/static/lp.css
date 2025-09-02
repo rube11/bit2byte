@@ -69,8 +69,7 @@ body {
     justify-content: center;
     padding: 0;
     border-radius: 8px;
-    
-    width: 320px;
+    width: auto;
     perspective: 1000px;
 }
 .form-container h2 {
@@ -84,8 +83,10 @@ body {
     margin-top: 1rem;
 }
 .form-container input[type="text"],
-.form-container input[type="password"] {
+.form-container input[type="password"]
+, .form-container input[type="email"] {  
     background: hsl(0, 1%, 17%);
+    color: #fff;
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;
@@ -153,7 +154,8 @@ body {
 }
 .card.flipped{
     transform: rotateY(180deg);
-    height: 33rem;
+    height: 45rem;
+    width: 35rem;
 }
 
 .flip-btn{
