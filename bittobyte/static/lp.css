@@ -1,4 +1,9 @@
 @import "ssfront.css";
+header, main, .form-container, .card {
+    position: relative;
+    z-index: 999;
+}
+
 body { 
     font-family: "tomorrow",sans-serif; 
     color: hsla(0, 0%, 99%, 0.884);
@@ -159,3 +164,18 @@ body {
     margin-top: 10px;
 }
 
+/* Background canvas area */
+#b2b-bg {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none; /* Make it not interactable */
+    z-index: 0;  /* Should be placed at the lowest level*/
+
+}
+
+#b2b-canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
