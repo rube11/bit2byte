@@ -324,3 +324,18 @@ body {
             pointer-events: none;
     }
 }
+
+/* ----- SVG BACKGORUND -----*/
+#hex-grid {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;            
+
+    pointer-events: none;
+}
+
+#hex-grid polygon {
+    filter: opacity(15%);
+}

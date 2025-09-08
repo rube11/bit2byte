@@ -330,7 +330,8 @@ function flipCard() {
 
     // Generate 1 sprite
     sprites.length = 0;
-    sprites.push(makeWholeSprite()); 
+    for(let i = 0; i < 5; ++i) sprites.push(makeWholeSprite()); 
+    
 
     window.addEventListener("resize", resize);
 
@@ -397,7 +398,8 @@ function flipCard() {
         // Move in a straight line motion
         // x(t) = vx * t
         // y(t) = vy * t
-        sp.x += sp.vx * dt; sp.y += sp.vy * dt;
+        sp.x += sp.vx * dt; 
+        sp.y += sp.vy * dt;
         bounceAllAgainst(sp);
 
       } else {
