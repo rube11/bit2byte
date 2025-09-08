@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="{% static 'userpage.css' %}">
+</head>
+<body>
+    {% include "partials/navbar.html" %} 
+
+    <div class="userpage-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div style="height: 10vh; clear: both;"></div>
+            <div class="bubble">
+                <h2>User Dashboard</h2>
+            </div>
+            
+
+<!-- This code below doesn't work well because we don't have users putting in requests yet or a place to store them-->
+            <ul style="list-style: none; padding: 0;">
+                {% for request in user_requests %}
+                    <li style="margin-bottom: 10px;">
+                        <a href="{% url 'request_detail' request.id %}">
+                            {{ request.title }}
+                        </a>
+                        <span style="font-size: 0.9em; color: #888;">({{ request.status }})</span>
+                    </li>
+                {% empty %}
+                    <li>No current website requests.</li>
+                {% endfor %}
+            </ul>
+
+
+            <div style="position: absolute; bottom: 20px; left: 20px; right: 20px;">
+                {% comment %} <form method="post" action="{% url 'verify_membership_key' %}"> {% endcomment %}
+                <form method="post" action="#">
+                    {% comment %} {% csrf_token %} {% endcomment %}
+                    <label for="membership-key" style="font-weight: bold;">Are you a member? Input your key here!</label>
+                    <input type="text" id="membership-key" name="membership_key" placeholder="Enter key" >
+                    <button type="submit" style="margin-top: 8px; width: 100%;">Submit</button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main style="flex: 1; padding: 20px;">
+            <h1>Welcome, {{ user.username }}!</h1>
+            <!-- Additional user info and main content goes here -->
+        </main>
+    </div>
+
+
+
+</body>
+</html>
