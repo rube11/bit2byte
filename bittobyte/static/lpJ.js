@@ -450,4 +450,12 @@ function flipCard() {
   requestAnimationFrame(step);
 })();
 
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.activeForm === "signup") {
+    const card = document.getElementById("card");
+    if (card && !card.classList.contains("flipped")) {
+      card.classList.add("flipped");
+    }
+  }
+});
 
