@@ -1,73 +1,48 @@
 {% load static %}
 <html lang="en">
     <head>
-        <link rel="stylesheet" href ="{% static 'ssteam.css' %}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href ="{% static 'ssteam.css' %}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
         rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
         crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+        <link rel="stylesheet" href ="{% static 'aboutPage.css' %}">
     </head>
     <body>
 
       <!-- INSERT NAVIGATION BAR HTML FROM partials/navbar.html -->
       {% include "partials/navbar.html" %} 
-
-      <div class="teamsection center">
-          <P class="ms">Officers</P>
-          
-          <div class="cards">
-            <div class="card" style="width: 18rem;">
-              <img src="{% static 'funnycat.jpg' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">President</h5>
-                <p class="card-text">blah blah blah blah </p>
-                <a href="#" class="btn btn-primary">contact</a>
-              </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">vice president </h5>
-                <p class="card-text">blah blah blah blah </p>
-                <a href="#" class="btn btn-primary">contact</a>
-              </div>
-            </div>  
-        
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">schedule liason</h5>
-                <p class="card-text">blah blah blah blah </p>
-                <a href="#" class="btn btn-primary">contact</a>
-              </div>
-            </div>  
-
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Treasurer</h5>
-                <p class="card-text">blah blah blah blah </p>
-                <a href="#" class="btn btn-primary">contact</a>
-              </div>
-            </div>  
-
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">advisor</h5>
-                <p class="card-text">blah blah blah blah </p>
-                <a href="#" class="btn btn-primary">contact</a>
-              </div>
-            </div>
-            
-          </div>
+      {% comment %} <div class = "officer-header"><h1>Our Officers</h1></div> {% endcomment %}
+    <div class="mscontainer ">
+      <div class="misstat">
+        <p class = "check"> Our Officers</span></p>
       </div>
+    </div>
 
-      {% include "partials/background.html" %} 
+
+      <div class="officer-container">
+            <div class = "card">
+                <div class="card-content">
+                    <img src="{% static 'RubensTmpPic.jpeg'%}" style="width:150px; height:auto;">
+                    <h3>Ruben Hernandez, President</h3>
+                    <p>
+                        Ruben is the President of Bit2Byte, leading the club with a vision for all of our members to gain experience, and 
+                        comfortablity in a professional enviornment. Ruben is a Computer Science Major, with a background in C, C++, HTML
+                        and CSS, JavaScript, and Django and Bootstrap. 
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        
+        
+        {% include "partials/background.html" %} 
     
     </body>
 </html>
