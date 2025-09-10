@@ -50,7 +50,56 @@
     </div>
 
     <!-- Slider main container -->
-    
+    <div class="carousel-overall-container">
+      <div class="carousel-container">
+        <!-- Sliding cards -->
+        <div class="card">
+          <img src="{% static 'icons8-html-240.png' %}" alt="">
+          <span>HTML</span>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'css-logo.png' %}" alt="">
+          <span>CSS</span>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'js-logo.png' %}" alt="">
+          <span>JS</span>
+        </div>
+        
+        <div class="card">
+          <img src="{% static 'icons8-html-240.png' %}" alt="">
+          <span>DJANGO</span>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'icons8-html-240.png' %}" alt="">
+          <span>REACT</span>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'icons8-html-240.png' %}" alt="">
+          <span>TAILWIND</span>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'icons8-html-240.png' %}" alt="">
+          <span>JAVA SPRING</span>
+        </div>
+       
+
+      </div>
+
+      <!-- Btns -->
+      <div class="carousel-btns">
+        <button class="carousel-btns--prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="carousel-btns--next"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+
+
 
     <!-- Tie the background behind the main -->
     {% include "partials/background.html" %} 
@@ -60,8 +109,7 @@
   {% include "partials/footer.html" %}
 
   
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+ 
   <script src="{% static 'fpJ.js' %}"></script>
 </body>
 

@@ -388,7 +388,75 @@ body {
 
 
 /* --- TEXT STACK CAROUSEL */
+.carousel-overall-container {
+        border: solid 3px blue;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
 
+        overflow: hidden;
+}
+
+.carousel-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 20em 0;
+}
+
+.card {
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        border-radius: 20%;
+        background-color: white;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        transition: 0.5s ease;
+        /* opacity: 0.6; */
+}
+
+.card img {
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        /* object-fit: cover; */
+}
+
+.card span {
+        position: absolute;
+        top: 2%;
+        right: 8%;
+        color: black;
+        font-size: 2.5em;
+        font-family: 'Tomorrow', sans-serif;
+        font-weight: 700;
+
+}
+
+.carousel-btns button{
+        border: 5px solid white;
+        height: 80px;
+        width: 80px;
+        font-size: 3em;
+        margin: 0.5em;
+        background: none;
+        border-radius: 50%;
+        color: white;
+        transition: 0.05s ease-in;
+        &:hover{
+                color: hsl(164, 73%, 30%);
+                background-color: white;
+                cursor: pointer;
+        }
+}
+
+button:active {
+        scale: .95;
+}
 
 
 
