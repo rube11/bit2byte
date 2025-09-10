@@ -1,64 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import 'ssfront.css';
-
-.officer-header {
-    border: solid, 3px, #0f4216;
-    
-
-    top: 15vh;
-    color: hsl(0, 0%, 100%);
-    font-family: "Tomorrow", sans-serif;
-
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 4px solid #0f4216;
-    
-    animation: 
-        typing 1s steps(8, end) forwards, 
-        cursor 0.7s steps(1) infinite;
-
-    }
-    @keyframes typing {
-            from { width: 0 }
-            to { width: 10ch }
-        }
-    
-    @keyframes cursor {
-            0%, 100% { border-color: #0f4216; }
-            50% { border-color: transparent; }
-        }
-
+* {
+  font-family: "Tomorrow", sans-serif;
+}
 
 .officer-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+
   gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 90%;
+  margin: 0 auto 20px auto;
+  padding-bottom: 20px;
 }
 
 .officer-container .card {
-  background-color: #000;
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), 
+              inset 0 4px 20px rgba(255, 255, 255, 0.3);
+  
+  border-radius: 2rem;
   overflow: hidden;
   color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
+  width: calc(33.333% - 20px);
+}
 
+.officer-container .card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  backdrop-filter: blur(1px);
+  box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+              inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+  opacity: 0.6;
+  z-index: -1;
+  filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
 }
 
 .officer-container .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 hsla(164, 73%, 30%, 0.5);
 }
 
 .officer-container .card img {
-  width: 100%;
-  height: auto;
+  object-fit: cover;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  margin: 20px auto 0 auto;
+  display: block;
+  background: #222;
+  border: 2px solid #fff;
 }
 
 .officer-container .card-content {
@@ -68,20 +73,58 @@
 
 .officer-container .card-content h3 {
   margin: 10px 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .officer-container .card-content p {
   font-size: 0.95rem;
   color: #ccc;
+  margin-bottom: 0px;
+}
+/*Chat wrote this so not 100% sure how it works*/
+@keyframes slideUpIn {
+  from { opacity: 0; transform: translateY(48px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@media (max-width: 600px) {
-  .card-container {
-    grid-template-columns: 1fr; 
+.officer-container .card {
+  --stagger: 0ms; /* default */
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  animation: slideUpIn 500ms cubic-bezier(.22,.61,.36,1) forwards;
+  animation-delay: var(--stagger);
+  will-change: transform, opacity;
+}
+
+@media (max-width: 900px) {
+  .officer-container .card {
+    width: calc(50% - 20px);
   }
-  .card-container > .card:last-child {
-    grid-column: auto; 
-    max-width: 100%;
+  .officer-container .card-content h3 {
+    font-size: 0.95rem;
+    margin: 8px 0;
+  }
+  .officer-container .card-content p {
+    font-size: 0.7rem;
+  }
+  .officer-container .card img {
+    width: 180px;
+    height: 180px;
+  }
+}
+@media (max-width: 600px) {
+  .officer-container .card {
+    width: 100%;
+  }
+  .officer-container .card-content h3 {
+    font-size: 0.75rem;
+    margin: 6px 0;
+  }
+  .officer-container .card-content p {
+    font-size: 0.75rem;
+  }
+  .officer-container .card img {
+    width: 120px;
+    height: 120px;
   }
 }
