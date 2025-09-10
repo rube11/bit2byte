@@ -1,6 +1,4 @@
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.officer-container .card');
     cards.forEach((card, i) => {
