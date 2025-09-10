@@ -8,19 +8,19 @@
 }
 
 body {
-        
+        /* border: solid 3px blue; */
         background: hsl(0, 0%, 10%);
         background-repeat: no-repeat;
         margin: 0;
-        min-height: 100vh;
-        background-repeat: no-repeat;
+        min-height: 100%;
+        height: auto;
         background-attachment: fixed;
 }
 
 /* ----- NAVBAR DECORATION ----- */
 .header {
         background: 
-                /* create circle gradient in bottom right corner */
+                /* create elipse gradient in bottom right corner */
                 radial-gradient(ellipse at bottom, rgba(21, 132, 103, 0.17), transparent 60%),
                 /* create a linear gradient glow strip at the bottom */
                 linear-gradient(to top, rgba(255, 255, 255, 0.05), transparent 50%),
@@ -269,7 +269,7 @@ body {
         
 }
 
-.side-links a:hover::after
+.side-links a:hover::after,
 .side-links button:hover::after {
         width: 100%;
 }
@@ -366,7 +366,7 @@ body {
 .whatwedocontainer {
         padding: 10rem;
         display: flex; 
-        justify-content: left;
+        justify-content: space-between;
         font-family: 'tomorrow', sans-serif;
         color: white;
 }
@@ -387,6 +387,97 @@ body {
         font-size: 2rem;
 }
 
+
+/* --- TEXT STACK CAROUSEL */
+
+
+
+
+
+/* ----- FOOTER DECORATION ----- */
+.footer {
+        /* background-color: rgb(52, 50, 50); */
+        background: 
+                radial-gradient(ellipse at center, rgba(21, 132, 103, 0.2), transparent 100%),
+                black;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+
+        padding: 10px;
+}       
+
+
+.footer-content {
+        font-family: 'Tomorrow', sans-serif;
+        padding: 30px;
+}
+
+.footer-content p {
+        color: white;
+        margin-bottom: 10px;
+}
+
+.footer-content h4 {
+        position: relative;
+        display: inline-block; /* Keep underline sacled to text */
+
+        color: white;
+        font-size: 20px;
+        margin-bottom: 1.3rem;
+        padding: 3px;
+}
+
+.footer-content h4::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        margin-top: 10px;
+
+        width: 75%;
+        height: 3px;
+        
+        background-color: hsl(164, 73%, 30%); 
+        border-radius: 50%;
+}
+
+
+
+.footer-content a{
+        text-decoration: none;
+        color: rgb(192, 189, 189);
+}
+
+.footer-content li {
+        list-style-type: none;
+        margin-bottom: 16px;
+}
+
+.footer-content li a {
+        display: block;
+        font-size: 15px;
+        font-weight: 400;
+        transition: all .3s ease;
+}
+
+.footer-content li a:hover {
+        transform: translateX(-3px) translateY(-4px);
+        color: hsl(164, 73%, 30%);
+        cursor: pointer;
+}
+
+.footer-content a i {
+        font-size: 30px;
+        margin-left: 5px;
+        color: white;
+}
+
+.footer-content .imglogo {
+        width: 100px;
+        height: 100px;
+        filter: brightness(2);
+}
 /* ------ MEDIA QUERIES RESPONSIVENESS ------ */ 
 /* --- header */
 @media (max-width: 997px) {
@@ -449,15 +540,28 @@ body {
 }
 
 /* ----- SVG BACKGORUND -----*/
-#hex-grid {
-        position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;            
-
-        pointer-events: none;
+html, body {
+        height: auto;       /* allow natural growth */
+        min-height: 100%;   /* at least full viewport */
+      }
+      
+main {
+        position: relative;
+        z-index: 0;
 }
+
+#hex-grid {
+        
+
+        /* display: block;   behaves like a <div> */
+        position: absolute;
+        inset: 0;         /* stick to all edges of <body> */
+        width: 100%;
+        height: 100%;     /* fill body height */
+        z-index: -1;      /* go behind all content */
+        pointer-events: none; /* don’t block clicks */
+}
+
 
 #hex-grid polygon {
         filter: opacity(15%);
