@@ -550,9 +550,6 @@ main {
 }
 
 #hex-grid {
-        
-
-        /* display: block;   behaves like a <div> */
         position: absolute;
         inset: 0;         /* stick to all edges of <body> */
         width: 100%;
