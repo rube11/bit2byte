@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="{% static 'ssfront.css' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
 </head>
 
 
@@ -40,12 +46,23 @@
         <p class="bottom">We are a team of dedicated students here at UNLV focused on developing software at a 
           low cost. Our services consist of site development and maintenence at a one time cost</p>
       </div>
+
     </div>
+
+    <!-- Slider main container -->
+    
+
+    <!-- Tie the background behind the main -->
+    {% include "partials/background.html" %} 
   </main>
 
-  {% include "partials/background.html" %} 
 
+  {% include "partials/footer.html" %}
 
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="{% static 'fpJ.js' %}"></script>
 </body>
 
 </html>
