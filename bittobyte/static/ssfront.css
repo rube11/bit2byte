@@ -368,9 +368,11 @@ body {
         justify-content: space-between;
         font-family: 'tomorrow', sans-serif;
         color: white;
+        gap: 50px;
 }
 
 .whatwedotext {
+        
         width:50%;
         display: flex;
         flex-direction: column;
@@ -388,6 +390,108 @@ body {
 
 
 /* --- TEXT STACK CAROUSEL */
+.carousel-overall-container {
+        display: flex;
+        position: relative;
+        width: 590px;
+        min-height: 200px;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+
+        overflow: hidden;
+}
+
+.carousel-container {
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: 10em 0;
+}
+
+.carousel-container--title {
+        font-size: 2.3em;
+        font-family: 'Tomorrow', sans-serif;
+        color: white;
+        font-weight: 600;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+
+}
+
+.carousel-container--card {
+        
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        border-radius: 20%;
+        background-color: white;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        transition: 0.5s ease;
+}
+
+.carousel-container--card img {
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        /* object-fit: cover; */
+}
+
+.carousel-container--card span {
+        background-color: rgba(24, 28, 27, 0.85);
+        border-radius: 25%;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        
+        color: white;
+        font-size: 2.5em;
+        font-family: 'Tomorrow', sans-serif;
+        font-weight: 700;
+}
+
+.carousel-btns button{
+        
+        height: 80px;
+        width: 80px;
+        font-size: 4em;
+        background: none;
+        border: none;
+        color: rgb(229, 228, 228);
+        transition: 0.05s ease-in;
+        &:hover{
+                color: hsl(164, 73%, 30%);
+                cursor: pointer;
+        }
+}
+
+button:active {
+        scale: .95;
+}
+
+.carousel-btns .carousel-btns--prev {
+        position: absolute;
+        left :-75px;
+        top: 50%;
+        transform: translateY(-50%);
+}
+
+.carousel-btns .carousel-btns--next {
+        position: absolute;
+        right :-75px;
+        top: 50%;
+        transform: translateY(-50%);
+}
+
+
 
 
 
