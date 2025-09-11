@@ -1,5 +1,5 @@
 /* ------ HANDLE CAROUSEL ANIMATIONS AND INDEXING ------ */
-const slider = document.querySelectorAll('.card'); // array of .card elements
+const slider = document.querySelectorAll('.carousel-container--card'); // array of .card elements
 const prev = document.querySelector('.carousel-btns--prev');
 const next = document.querySelector('.carousel-btns--next');
 
@@ -12,7 +12,7 @@ const sliderShow = () => {
     slider[currIdx].style.filter = "none";
     slider[currIdx].style.opacity  = 1;
     
-
+    // Display right side of carousel
     for(let i = currIdx + 1; i < slider.length; ++i) {
         let offset = i - currIdx;
 
@@ -30,6 +30,7 @@ const sliderShow = () => {
 
 
     counter = 0;
+    // Display left side of carousel
     for(let i = currIdx - 1; i >= 0; --i) {
         let offset = currIdx - i;
 
