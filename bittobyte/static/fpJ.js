@@ -3,63 +3,63 @@ const slider = document.querySelectorAll('.carousel-container--card'); // array 
 const prev = document.querySelector('.carousel-btns--prev');
 const next = document.querySelector('.carousel-btns--next');
 
-let currIdx = Math.floor(slider.length / 2);
-console.log("curridx: " + currIdx);
+const OFFSET_PX = 160;
+// let currIdx = Math.floor(slider.length / 2);
+let currIdx = 0;
+let length = slider.length;
 const sliderShow = () => {
 
     slider[currIdx].style.transform = `translate(0, -50%)`;
     slider[currIdx].style.zIndex = 1;
     slider[currIdx].style.filter = "none";
     slider[currIdx].style.opacity  = 1;
-    
-    // Display right side of carousel
-    for(let i = currIdx + 1; i < slider.length; ++i) {
-        let offset = i - currIdx;
-
-        // Translate to the x direction to the right
-        // Translate 50% of the elements own height
-        slider[i].style.transform = `translate(${160*offset}px,-50%) 
-        scale(${1-.2*offset})
-        perspective(20px)
-        rotateY(-1deg)`;
-
-        slider[i].style.zIndex = `${-offset}`;
-        slider[i].style.filter = "brightness(70%)"
-        slider[i].style.opacity = offset > 2 ? 0 : 1;
-    }
 
 
-    counter = 0;
-    // Display left side of carousel
-    for(let i = currIdx - 1; i >= 0; --i) {
-        let offset = currIdx - i;
+    slider.forEach((card, i) => {
+        /* FORMULA
+        *   - offset = (currIdx - i + length) % length;
+        *       - ... + length) % length to ensure offset is always in bounds
+        *   - if offset > length/2 then offset -= length
+        */
 
-        // Translate to the x direction to the right
-        // Translate 50% of the elements own height
-        slider[i].style.transform = `translate(${-160*offset}px,-50%) 
-        scale(${1-.2*offset})
-        perspective(20px)
-        rotateY(1deg)`;
+        // console.log(`i: ${i }  currIdx - i + length: ${currIdx - i + length}
+        // currIdx - i + length % 7: ${(currIdx - i + length) % 7}`);
 
-        slider[i].style.zIndex = `${-offset}`;
-        slider[i].style.filter = "brightness(70%)"
-        slider[i].style.opacity = offset > 2 ? 0 : 1;
-    }
+        let offset = (i - currIdx + length) % length; // Right side offset
+        console.log(`offset: ${offset} length/2: ${Math.floor(length/2)}`)
+        if(offset > Math.floor(length/2)) offset -= length; // Left side offset
+
+        console.log(`x translate: ${OFFSET_PX * offset}`);
+        if(i != currIdx) {
+
+          
+            card.style.transform = `
+                translate(${OFFSET_PX * offset}px, -50%)
+                scale(${1-.2*Math.abs(offset)})
+                perspective(20px)
+                rotateY(${offset < 0 ? '1deg' : '-1deg'})
+                
+            `;
+            card.style.filter = "brightness(70%)";
+            card.style.zIndex = `${offset < 0 ? offset : -offset}`;
+            
+        }
+
+        
+
+
+    });
 }
 sliderShow();
 
 next.addEventListener('click', (e) => {
-    if(currIdx == 6) return;
-
-    ++currIdx;
+    currIdx = (currIdx + 1) % slider.length;
     sliderShow();
     
 });
 
 prev.addEventListener('click', (event) => {
-    if(currIdx == 0) return;
-
-    --currIdx;
+    currIdx = (currIdx - 1 + slider.length) % slider.length;
     sliderShow();
 });
 
