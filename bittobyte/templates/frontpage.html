@@ -47,10 +47,75 @@
           low cost. Our services consist of site development and maintenence at a one time cost</p>
       </div>
 
+
+      <!-- wrapping whole thing -->
+      <div style="position: relative; padding-top: 100px;">
+        
+        <div class="carousel-btns">
+          <button class="carousel-btns--prev"> < </button>
+        </div>
+
+        <div class="carousel-container--title">
+          <span>TECHNOLOGIES USED</span>
+        </div>
+
+
+        <div class="carousel-overall-container">
+          <div class="carousel-container">
+            
+            <!-- Sliding cards -->
+            <div class="carousel-container--card">
+              <img src="{% static 'icons8-html-240.png' %}" alt="">
+              <span>HTML</span>
+            </div>
+    
+            <div class="carousel-container--card">
+              <img src="{% static 'icons8-css-240.png' %}" alt="">
+              <span>CSS</span>
+            </div>
+    
+            <div class="carousel-container--card">
+              <img src="{% static 'icons8-javascript-240.png' %}" alt="">
+              <span>JAVASCRIPT</span>
+            </div>
+            
+            <div class="carousel-container--card">
+              <img src="{% static 'icons8-python-240.png' %}" alt="">
+              <span>DJANGO</span>
+            </div>
+            
+            <div class="carousel-container--card">
+              <img src="{% static 'icons8-react-native-240.png' %}" alt="">
+              <span>REACT</span>
+            </div>
+    
+            <div class="carousel-container--card">
+              <img src="{% static 'icons8-tailwind-css-240.png' %}" alt="">
+              <span>TAILWIND</span>
+            </div>
+    
+            <div class="carousel-container--card">
+              <img src="{% static 'icons8-java-240.png' %}" alt="">
+              <span>JAVA SPRING</span>
+            </div>
+          
+    
+          </div>
+    
+        </div>
+        <!-- Btns -->
+        <div class="carousel-btns">
+          <button class="carousel-btns--next"> > </button>
+        </div>
+      </div>
+      <!-- ethan^^^ -->
     </div>
 
     <!-- Slider main container -->
     
+
+
+
 
     <!-- Tie the background behind the main -->
     {% include "partials/background.html" %} 
@@ -60,8 +125,7 @@
   {% include "partials/footer.html" %}
 
   
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+ 
   <script src="{% static 'fpJ.js' %}"></script>
 </body>
 
