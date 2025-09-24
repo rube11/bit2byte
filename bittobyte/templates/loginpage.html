@@ -38,27 +38,30 @@
                 <p>Don't have an account? <span class="flip-btn" onclick="flipCard()">Sign Up</span></p>
             </div> 
             <div class="face back">
-                <h2>Sign Up</h2>
+                <h2>Sorry we are not taking signups at the moment</h2>
+                <!-- <h2>Sign Up</h2> -->
                 <form method="POST">
                     {% csrf_token %}
-                    {% if messages %}
+
+                    <!-- use this code when you want to start logging people in but for now it is down --> 
+                    <!-- {% if messages %}
                         <div class="errormsg">
                             {% for message in messages %}
                                 <p>{{ message }}</p>
                             {% endfor %}
                         </div>
-                    {% endif %}
-                    <p id="username" style="margin-bottom: 6px;">New Username</p>
+                    {% endif %} -->
+                    <!-- <p id="username" style="margin-bottom: 6px;">New Username</p> -->
                     <!-- handle loginform data-->
-                    {{ signup_form.username }}
+                    <!-- {{ signup_form.username }}
                     {{ signup_form.email.label_tag }}
-                    {{ signup_form.email }}
-                    <p id="password">Passwords must be at least 8 characters long</p>
-                    {{ signup_form.password1.label_tag }}
+                    {{ signup_form.email }} -->
+                    <!-- <p id="password">Passwords must be at least 8 characters long</p> -->
+                    <!-- {{ signup_form.password1.label_tag }}
                     {{ signup_form.password1 }}
                     {{ signup_form.password2.label_tag }}
-                    {{ signup_form.password2 }}
-                    <button type="submit" name="signup">Sign Up</button>
+                    {{ signup_form.password2 }} -->
+                    <!-- <button type="submit" name="signup">Sign Up</button> -->
                 </form>
                 <p>Already have an account? <span class="flip-btn" onclick="flipCard()">Login</span></p>
             </div>

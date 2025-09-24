@@ -626,6 +626,7 @@ button:active {
 
   .whatwedocontainer {
         padding: 1rem;
+        flex-direction: column;
   }
   .whatwedotext {
         width: 100%;
@@ -639,6 +640,18 @@ button:active {
   .whatwedocontainer .whatwedotext .bottom {
         font-size: 1.5rem;
         text-align: center;
+  }
+
+  .carousel-overall-container{
+        width: 100%;
+        padding: 0 1rem;
+        flex-direction: column;
+  }
+  .caroussel-btns 
+  {
+        display: flex; 
+        position: static;
+        justify-content: center;
   }
 }
 
