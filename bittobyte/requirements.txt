@@ -1,4 +1,26 @@
     #python_version == "3.13.7"
 
+# Core
 Django==5.2.5
+python-dotenv==1.0.0  # For environment variable management
 
+# Database (uncomment what you need)
+# psycopg2-binary==2.9.9  # For PostgreSQL
+# mysqlclient==2.2.0  # For MySQL
+
+# Development & Testing
+django-debug-toolbar==4.2.0
+coverage==7.3.2  # For test coverage reports
+
+# Authentication & Authorization
+django-allauth==0.57.0  # For social auth (optional)
+
+# Static files
+whitenoise==6.6.0  # For serving static files in production
+
+# Production
+gunicorn==21.2.0  # WSGI server for production
+dj-database-url==2.1.0  # For database configuration in production
+
+# Security
+django-cors-headers==4.3.0  # If needed for API access
