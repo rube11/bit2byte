@@ -598,6 +598,100 @@ button:active {
 
 }
 
+/* ----- CONTACT SECTION ----- */
+.contact-section {
+        padding: 100px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.contact-content {
+        max-width: 1200px;
+        width: 100%;
+        text-align: center;
+}
+
+.contact-title {
+        font-family: 'Tomorrow', sans-serif;
+        font-size: 3rem;
+        color: white;
+        margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+        font-family: 'Tomorrow', sans-serif;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 3rem;
+}
+
+.contact-links {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+}
+
+.contact-card {
+        background: radial-gradient(ellipse at top, rgba(21, 132, 103, 0.15), transparent 60%),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent 50%),
+                    rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 2rem;
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: white;
+        font-family: 'Tomorrow', sans-serif;
+        transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+        transform: translateY(-5px);
+        border-color: hsl(164, 73%, 30%);
+        box-shadow: 0 8px 20px rgba(21, 132, 103, 0.3);
+}
+
+.contact-card i {
+        font-size: 3rem;
+        color: hsl(164, 73%, 30%);
+}
+
+.contact-card span {
+        font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+        .contact-section {
+                padding: 50px 20px;
+        }
+        
+        .contact-title {
+                font-size: 2rem;
+        }
+        
+        .contact-subtitle {
+                font-size: 1rem;
+        }
+        
+        .contact-links {
+                flex-direction: column;
+                align-items: center;
+        }
+        
+        .contact-card {
+                width: 100%;
+                max-width: 350px;
+        }
+}
+
 /* --- side header */
 @media (min-width: 998px) {
         .side-bar--header {
