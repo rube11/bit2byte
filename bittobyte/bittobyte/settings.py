@@ -82,12 +82,19 @@ LOGOUT_REDIRECT_URL = "home"     #logout
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Default to SQLite for local development
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Use PostgreSQL if DATABASE_URL is provided (for production/Fly.io)
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    import dj_database_url
+    DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
 
 
 # Password validation
